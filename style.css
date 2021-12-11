@@ -33,9 +33,9 @@ h1{
     transform: translate(-50%, -50%);
 }
 /* Image Container*/
-.image-continer{
+.image-container{
     margin: 10% 30%;
 }
-.image-continer img{
+.image-container img{
     width: 100%;
 }
