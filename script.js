@@ -6,7 +6,7 @@ let photoArray = [] ;
 //create element for links,photo add to DOM
 function displayPhoto(){
     //run function forEach
-    photoArray.forEach((photo) =>{
+    photoArray.forEach((photo) => {
         //create <a> to link unsplash
         const item = document.createElement('a');
         item.setAttribute('href',photo.links.html);
@@ -19,7 +19,7 @@ function displayPhoto(){
         //put <img> inside <a>,then put both inside imgContanier
         item.appendChild(img);
         imgContainer.appendChild(item); 
-    })
+    });
 }
 //Unsplash API
 const count = 10;
@@ -30,7 +30,7 @@ const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&coun
 async function getPhoto() {
      try{
          const response = await fetch(apiUrl);
-         const photoArray = await response.json();
+         photoArray = await response.json();
          displayPhoto();
      }catch(error){
           //to catch errors
