@@ -11,13 +11,11 @@ function displayPhoto(){
         const item = document.createElement('a');
         item.setAttribute('href',photo.links.html);
         item.setAttribute('target','_blank');
-        console.log(photo.links.html);
         //create img for photo 
         const img = document.createElement('img');
         img.setAttribute('src',photo.urls.regular);
         img.setAttribute('atl',photo.alt_description);
         img.setAttribute('title',photo.alt_description);
-        console.log(photo.urls.regular);
         //put <img> inside <a>,then put both inside imgContanier
         item.appendChild(img);
         imgContainer.appendChild(item); 
