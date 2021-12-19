@@ -52,6 +52,7 @@ function displayPhoto(){
         //put <img> inside <a>,then put both inside imgContanier
         item.appendChild(img);
         imgContainer.appendChild(item); 
+        loader.hidden = false;
     });
 }
 
