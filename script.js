@@ -1,30 +1,14 @@
 const imgContainer = document.getElementById('image-container');
 const loader = document.getElementById('loader');
 
-let photoArray = [] ;
-
-//Unsplash API
-const count = 30;
-const apiKey = `3kSVx2dKk9nm4g02HwsCEToXUiHDb4RuUtxPXYAKiho`;
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
-
-//get photo from unsplash api
-async function getPhoto() {
-     try{
-         const response = await fetch(apiUrl);
-         photoArray = await response.json();
-         console.log(photoArray);
-         displayPhoto();
-     }catch(error){
-          //to catch errors
-     }
-}
+//add Healper Function
 function setAttributes(element, atributes) {
     for(const key in atributes){
         element.setAttribute(key ,atributes[key]);
     }
 
 }
+
 //create element for links,photo add to DOM
 function displayPhoto(){
     //run function forEach
@@ -51,6 +35,25 @@ function displayPhoto(){
         item.appendChild(img);
         imgContainer.appendChild(item); 
     });
+}
+
+let photoArray = [] ;
+
+//Unsplash API
+const count = 30;
+const apiKey = `3kSVx2dKk9nm4g02HwsCEToXUiHDb4RuUtxPXYAKiho`;
+const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
+
+//get photo from unsplash api
+async function getPhoto() {
+     try{
+         const response = await fetch(apiUrl);
+         photoArray = await response.json();
+         console.log(photoArray);
+         displayPhoto();
+     }catch(error){
+          //to catch errors
+     }
 }
 
 //on Load
