@@ -55,6 +55,13 @@ async function getPhoto() {
           //to catch errors
      }
 }
+window.addEventListener('scroll' ,(e) =>{
+      
+    if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000){
+        console.log('load more ~');
+        getPhoto();
+    }
+});
 
 //on Load
 getPhoto();
