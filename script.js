@@ -19,14 +19,24 @@ async function getPhoto() {
           //to catch errors
      }
 }
+function setAttributes(element, atributes) {
+    for(const key in atributes){
+        element.setAttribute(key ,atributes[key]);
+    }
+
+}
 //create element for links,photo add to DOM
 function displayPhoto(){
     //run function forEach
     photoArray.forEach((photo) => {
         //create <a> to link unsplash
         const item = document.createElement('a');
-        item.setAttribute('href',photo.links.html);
-        item.setAttribute('target','_blank');
+        // item.setAttribute('href',photo.links.html);
+        // item.setAttribute('target','_blank');
+        setAttributes(item ,{
+            href:photo.links.html,
+            target:_blank
+        });
         //create img for photo 
         const img = document.createElement('img');
         img.setAttribute('src',photo.urls.regular);
@@ -37,5 +47,6 @@ function displayPhoto(){
         imgContainer.appendChild(item); 
     });
 }
+
 //on Load
 getPhoto();
