@@ -3,6 +3,22 @@ const loader = document.getElementById('loader');
 
 let photoArray = [] ;
 
+//Unsplash API
+const count = 100;
+const apiKey = `3kSVx2dKk9nm4g02HwsCEToXUiHDb4RuUtxPXYAKiho`;
+const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
+
+//get photo from unsplash api
+async function getPhoto() {
+     try{
+         const response = await fetch(apiUrl);
+         photoArray = await response.json();
+         console.log(photoArray);
+         displayPhoto();
+     }catch(error){
+          //to catch errors
+     }
+}
 //create element for links,photo add to DOM
 function displayPhoto(){
     //run function forEach
@@ -20,21 +36,6 @@ function displayPhoto(){
         item.appendChild(img);
         imgContainer.appendChild(item); 
     });
-}
-//Unsplash API
-const count = 100;
-const apiKey = `3kSVx2dKk9nm4g02HwsCEToXUiHDb4RuUtxPXYAKiho`;
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
-
-//get photo from unsplash api
-async function getPhoto() {
-     try{
-         const response = await fetch(apiUrl);
-         photoArray = await response.json();
-         displayPhoto();
-     }catch(error){
-          //to catch errors
-     }
 }
 //on Load
 getPhoto();
