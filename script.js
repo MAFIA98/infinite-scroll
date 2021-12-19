@@ -22,7 +22,7 @@ function displayPhoto(){
     });
 }
 //Unsplash API
-const count = 10;
+const count = 100;
 const apiKey = `3kSVx2dKk9nm4g02HwsCEToXUiHDb4RuUtxPXYAKiho`;
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
