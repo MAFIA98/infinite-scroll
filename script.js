@@ -66,6 +66,7 @@ function setAttributes(element, atributes) {
 // add addEventListener Scroll
 window.addEventListener('scroll' ,(e) =>{
     if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready){
+        ready = false;
         getPhoto();
     }
 });
